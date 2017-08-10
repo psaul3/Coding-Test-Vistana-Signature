@@ -1,0 +1,26 @@
+{
+  "name": "coding-test-vistana-signature",
+  "version": "1.0.0",
+  "description": "One of the most common website requirements is for a user to sign up. For this coding challenge we would like the tester to create main page where a user can login or sign up. On the first sign up page a user enters his personal information. On the second page the user should fill out 3 security questions. On completion the user should be brought back to the main page. On selection of the login link a user should be prompted to input a username. On submit the user should be shown one of the security questions that he/she previously filled out. If the question is answered correctly a main page should show.",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "meanjs": "^0.0.1",
+    "node-gyp": "^3.6.2",
+    "rebuild": "^0.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psaul3/Coding-Test-Vistana-Signature.git"
+  },
+  "author": "Saul Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psaul3/Coding-Test-Vistana-Signature/issues"
+  },
+  "homepage": "https://github.com/psaul3/Coding-Test-Vistana-Signature#readme"
+}
