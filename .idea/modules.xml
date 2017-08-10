@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Coding-Test-Vistana-Signature.iml" filepath="$PROJECT_DIR$/.idea/Coding-Test-Vistana-Signature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tomcat/maven/maven.iml" filepath="$PROJECT_DIR$/tomcat/maven/maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tomcat/spring-mvc/spring-mvc.iml" filepath="$PROJECT_DIR$/tomcat/spring-mvc/spring-mvc.iml" />
     </modules>
   </component>
 </project>

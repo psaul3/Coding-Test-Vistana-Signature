@@ -5,6 +5,11 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/tomcat/webapps/docs" />
+      <excludeFolder url="file://$MODULE_DIR$/tomcat/webapps/examples" />
+      <excludeFolder url="file://$MODULE_DIR$/tomcat/webapps/host-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/tomcat/webapps/manager" />
+      <excludeFolder url="file://$MODULE_DIR$/tomcat/webapps/tomcat-success" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
