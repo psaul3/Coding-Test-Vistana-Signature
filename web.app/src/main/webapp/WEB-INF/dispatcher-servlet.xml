@@ -19,7 +19,10 @@
 
     <bean class="com.project.web.service.UserService" />
 
-    <mvc:resources mapping="/resources/**" location="/resources/"/>
+    <mvc:resources mapping="/css/**" location="/assets/css/" />
+    <mvc:resources mapping="/js/**" location="/assets/js/" />
+
+    <mvc:annotation-driven />
 
 
 </beans>

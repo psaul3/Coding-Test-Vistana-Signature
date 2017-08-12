@@ -11,10 +11,6 @@
 <html>
 <head>
     <title></title>
-    <jsp:include page="header.jsp"/>
-
-    <link href="<c:url value="/resources/css/login.css" />" rel="stylesheet">
-    <script src="<c:url value="/resources/js/login.js" />"></script>
 </head>
 <body>
 <form id="example-form" action="#">
@@ -30,6 +26,5 @@
     </div>
 </form>
 
-<jsp:include page="footer.jsp"/>
 </body>
 </html>

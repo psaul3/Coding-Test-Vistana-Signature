@@ -9,33 +9,26 @@
 
 <html>
 <head>
-    <title>Home</title>
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="includes/header.jsp"/>
+    <link href="<c:url value="/css/header.scss"/>" rel="stylesheet"/>
+    <link href="<c:url value="/css/main.scss"/>" rel="stylesheet"/>
 
 </head>
 <body>
-<jsp:include page="navbar.jsp"/>
+    <jsp:include page="navigation/navbar.jsp"/>
+    <div class="wrapper">
+        <section class="application">
+            <aside class="sidebar">
+                <p>Sidebar</p>
+            </aside>
+            <main class="mainpane">
+                <section class="wrapper">
+                <p>Main Pane</p>
+                </section>
+            </main>
+        </section>
+    </div>
 
-<main class="content">
-    <jsp:include page="sidebar.jsp"/>
-    <main class="content-articles">
-        <h3>${title}</h3>
-        <table>
-            <thead>
-            <tr>Username</tr>
-            <tr>Birthdate</tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${userList.records}" var="item">
-                <tr>
-                    <td><c:out value="${item.fields.username.toString()}" /></td>
-                    <td><c:out value="${item.fields.birthdate.toString()}" /></td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-    </main>
-</main>
-<jsp:include page="footer.jsp"/>
+    <script src="<c:url value="/js/kickstart.min.js"/>" type="application/javascript"></script>
 </body>
 </html>

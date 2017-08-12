@@ -1,0 +1,13 @@
+.wrapper {
+@include wrapper();
+}
+
+.application {
+@include row();
+}
+.sidebar {
+@include column(4);
+}
+.mainpane {
+@include column(8);
+}
