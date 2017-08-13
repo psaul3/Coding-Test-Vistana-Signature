@@ -12,7 +12,7 @@
 </jsp:include>
 
 <div class="grid-x medium-6 align-center">
-    <form action="/signup-questions" method="post">
+    <form action="/signup-questions" method="post" onSubmit="return validate(this);" name="form">
         <c:if test="${fn:length(error) > 0}">
             <div data-closable class="callout alert-callout-subtle alert">
                 <c:if test="${fn:contains(error, 'Username')}">
@@ -26,8 +26,7 @@
         <div class="grid-x">
             <div class="small-12 cell">
                 <label for="username">Username
-                    <input type="text" id="username" name="username"
-                           value="<c:out value="${user != null ? user._userName : ''}"/> ">
+                    <input type="text" id="username" name="username">
                 </label>
             </div>
             <div class="small-12 cell">
@@ -42,20 +41,30 @@
 
 <jsp:include page="includes/footer.jsp"/>
 <script type="application/javascript">
-    $(function () {
-        var showClass = 'show';
+    var ck_username = /^[A-Za-z0-9]{5,12}$/;
 
-        $('input').on('checkval', function () {
-            var label = $(this).prev('label');
-            if (this.value !== '') {
-                label.addClass(showClass);
-            } else {
-                label.removeClass(showClass);
-            }
-        }).on('keyup', function () {
-            $(this).trigger('checkval');
-        });
-    });
+    function validate(form) {
+        var username = form.username.value;
+        var errors = [];
+
+        if (!ck_username.test(username)) {
+            errors[errors.length] = "UserName is invalid.";
+        }
+        if (errors.length > 0) {
+            reportErrors(errors);
+            return false;
+        }
+        return true;
+    }
+
+    function reportErrors(errors) {
+        var msg = "Username must be alphanumeric between 5-12 characters\n";
+        for (var i = 0; i < errors.length; i++) {
+            var numError = i + 1;
+            msg += "\n" + numError + ". " + errors[i];
+        }
+        alert(msg);
+    }
 </script>
 </body>
 </html>

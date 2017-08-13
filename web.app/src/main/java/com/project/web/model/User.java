@@ -8,6 +8,7 @@ public class User implements Serializable{
 
     private final String _userName;
     private final String _birthdate;
+    private Question _lastQuestionAsked;
     private List<Question> _questions = new ArrayList<>();
 
     public User(String username, String birthdate){
@@ -29,5 +30,14 @@ public class User implements Serializable{
 
     public List<Question> get_questions() {
         return _questions;
+    }
+
+    public Question get_lastQuestionAsked() {
+        return _lastQuestionAsked;
+    }
+
+    public User set_LastQuestionAsked(Question _lastQuestionAsked) {
+        this._lastQuestionAsked = _lastQuestionAsked;
+        return this;
     }
 }

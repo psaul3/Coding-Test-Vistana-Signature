@@ -11,4 +11,12 @@ public class Question implements Serializable{
         _question = question;
         _answer = answer;
     }
+
+    public String get_question() {
+        return _question;
+    }
+
+    public String get_answer() {
+        return _answer;
+    }
 }
