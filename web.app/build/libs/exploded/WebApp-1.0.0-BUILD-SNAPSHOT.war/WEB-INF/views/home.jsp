@@ -7,24 +7,12 @@
 
 </head>
 <body>
-    <jsp:include page="navigation/navbar.jsp"/>
-<div class="row" data-equalizer>
-    <table>
-        <thead>
-        <tr>
-            <th width="200">User</th>
-            <th>Birthdate</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${userList.records}" var="item">
-            <tr>
-                <td><c:out value="${item.fields.username}"/></td>
-                <td><c:out value="${item.fields.birthdate}"/></td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+<jsp:include page="navigation/navbar.jsp">
+    <jsp:param name="title" value="${title}"/>
+</jsp:include>
+
+<div class="grid-x grid-margin-x grid-margin-y">
+
 </div>
 
 

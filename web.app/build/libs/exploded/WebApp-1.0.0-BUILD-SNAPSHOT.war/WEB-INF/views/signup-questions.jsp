@@ -4,70 +4,40 @@
 <html>
 <head>
     <jsp:include page="includes/header.jsp"/>
-
-    <style>
-
-        .floated-label-wrapper {
-            position: relative;
-        }
-
-        .floated-label-wrapper label {
-            background: #fefefe;
-            color: #1779ba;
-            font-size: 0.75rem;
-            font-weight: 600;
-            left: 0.75rem;
-            opacity: 0;
-            padding: 0 0.25rem;
-            position: absolute;
-            top: 2rem;
-            transition: all 0.15s ease-in;
-            z-index: -1;
-        }
-
-        .floated-label-wrapper label input[type=text],
-        .floated-label-wrapper label input[type=email],
-        .floated-label-wrapper label input[type=password] {
-            border-radius: 4px;
-            font-size: 1.75em;
-            padding: 0.5em;
-        }
-
-        .floated-label-wrapper label.show {
-            opacity: 1;
-            top: -0.85rem;
-            z-index: 1;
-            transition: all 0.15s ease-in;
-        }
-
-
-    </style>
-
 </head>
 <body>
-<jsp:include page="navigation/navbar.jsp"/>
+<jsp:include page="navigation/navbar.jsp">
+    <jsp:param name="title" value="${title}"/>
+    <jsp:param name="showSignUp" value="false"/>
+</jsp:include>
 
 <div class="grid-x medium-6 align-center">
-    <form class="callout text-center" action="/signup-complete" method="post" data-equalizer
-          data-equalize-by-row="true">
-        <h2>Security Questions</h2>
-        <h3 class="subheader">Thank you ${username}, now please select security questions and provide an answer for each.</h3>
-        <c:forTokens items="1,2,3" delims="," var="i">
-            <div class="floated-label-wrapper">
-                <label for="question${i}">Question #${i}</label>
-                <select id="question${i}" name="question${i}">
-                    <option>Choose...</option>
-                    <c:forEach items="${questionsList.records}" var="question" varStatus="iter">
-                        <option value="${question.id}">${question.fields.question.toString()}</option>
-                    </c:forEach>
-                </select>
+    <form action="/signup-complete" method="post">
+        <c:if test="${not empty error}">
+            <div data-closable class="callout alert-callout-subtle alert">
+                <strong>${error}</strong>
             </div>
-            <div class="floated-label-wrapper">
-                <label for="answer${i}">Answer #${i}</label>
-                <input type="text" id="answer${i}" name="answer${i}" placeholder="Answer #${i}">
-            </div>
-        </c:forTokens>
-        <input class="button expanded" type="submit" value="Finish">
+        </c:if>
+            <h2>Security Questions</h2>
+            <h4 class="subheader">Thank you ${user._userName}, now please select security questions and provide an
+                answer for each.</h4>
+            <c:forTokens items="1,2,3" delims="," var="i">
+                <div class="small-12 cell">
+                    <label for="question${i}">Question #${i}
+                        <select id="question${i}" name="question${i}">
+                            <option>Choose...</option>
+                            <c:forEach items="${questionsList}" var="question" varStatus="iter">
+                                <option value="${question}">${question}</option>
+                            </c:forEach>
+                        </select>
+                    </label>
+                </div>
+                <div class="small-12 cell">
+                    <label for="answer${i}">Answer #${i}</label>
+                    <input type="text" id="answer${i}" name="answer${i}" placeholder="Answer #${i}">
+                </div>
+            </c:forTokens>
+            <input class="button expanded" type="submit" value="Finish">
     </form>
 </div>
 
